@@ -1,0 +1,193 @@
+/* Basic CSS for layout and appearance */
+body {
+  font-family: sans-serif;
+  margin: 0;
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  background-color: #FFFDF6; /* Changed body background color */
+}
+
+header {
+  background-color: #504B38;
+  color: white;
+  padding: 20px 20px;
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: 1.2em;
+}
+
+nav ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+}
+
+nav li {
+  margin-left: 20px;
+}
+
+nav a {
+  color: white;
+  text-decoration: none;
+}
+
+.container {
+  width: 60%;
+  max-width: 700px;
+  margin: auto;
+  padding: 20px;
+  border: 1px solid #ccc;
+  text-align: center;
+  background-color: #FAF6E9; /* Changed container background color */
+  box-sizing: border-box; /* Include padding and border in the height */
+  display: flex; /* Use flexbox for vertical centering */
+  flex-direction: column; /* Stack content vertically */
+  justify-content: center; /* Vertically center the content */
+}
+
+.container.initial {
+  height: 550px; /* Set a higher height for the initial form if needed */
+}
+
+.container.questionnaire {
+  min-height: 300px;
+  height: 300px;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+
+.question-number {
+  text-align: center; /* Center align the question number */
+  margin-bottom: 10px; /* Add margin for spacing */
+}
+
+.question-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  flex-grow: 1; /* Allow the question to take available space to help center it */
+}
+
+.question {
+  max-height: 75px;
+  overflow-y: auto;
+  text-align: center;
+}
+
+.options {
+  text-align: center;
+  padding-bottom: 20px;
+}
+
+#form-container {
+  display: inline-block;
+  text-align: left;
+  width: 80%; /* Make the form wider */
+  margin: 0 auto; /* Center the form horizontally */
+}
+
+input[type="text"],
+input[type="number"],
+input[type="tel"],
+select {
+  width: 100%;
+  padding: 8px;
+  margin: 8px 0;
+  box-sizing: border-box;
+}
+
+button {
+  background-color: #4CAF50;
+  color: white;
+  padding: 10px 20px;
+  border: none;
+  cursor: pointer;
+  display: block;
+  margin: 20px auto;
+  font-size: 1.1em;
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+}
+
+button:hover {
+  background-color: #367c39; /* Darken the color on hover */
+}
+
+.question {
+  font-size: 1.2em;
+  margin-bottom: 20px;
+  display: inline-block; 
+  width: 100%;
+  max-height: 75px; /* Set a maximum height */
+  overflow-y: auto; /* Enable vertical scrolling if needed */
+  margin-top: 20px;
+  margin-bottom: 20px;
+}
+
+.options {
+  text-align: center; /* Center the options buttons */
+  padding-bottom: 20px; /* Add padding below the buttons */
+}
+
+.options button:first-child,
+.options button:last-child {
+  background-color: #4CAF50; /* Green */
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  margin: 5px;
+  cursor: pointer;
+  display: inline-block; /* Display buttons in a line */
+  transition: background-color 0.3s ease; /* Smooth transition for hover effect */
+  width: 90px; /* Set fixed width */
+  margin-top: 20px; /* Add padding top to the buttons */
+}
+
+.options button:last-child {
+  background-color: red; /* Red */
+}
+
+.options button:hover {
+  background-color: #367c39; /* Darken the color on hover */
+}
+
+/* Hover effect for the "Tidak" button */
+.options button:last-child:hover {
+  background-color: #8B0000; /* Darken the red color on hover */
+}
+
+/* New styles for validation */
+input.invalid,
+select.invalid {
+  border: 2px solid red; /* Highlight invalid input with red border */
+}
+
+input.valid,
+select.valid {
+  border-color: initial; /* Reset border without changing background */
+}
+
+/* Media Queries for smaller screens */
+@media (max-width: 768px) {
+  body {
+    font-size: 14px; /* Reduce font size for smaller screens */
+  }
+
+  .container {
+    width: 90%; /* Increase width on smaller screens */
+    padding: 10px;
+  }
+
+  nav ul {
+    flex-direction: column;
+    padding: 10px 0;
+  }
+
+  nav li {
+    margin-left: 0;
+    margin-bottom: 5px;
+  }
+}
